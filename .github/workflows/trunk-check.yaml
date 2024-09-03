@@ -22,4 +22,4 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Trunk Check
-        uses: trunk-io/trunk-action@b52f9d59bd2482b083bc2dcee399ebbc5fb304cc
+        uses: trunk-io/trunk-action@a893ebca68e8ac2445fec01b3b683b29cd4a6d50
