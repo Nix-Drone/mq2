@@ -18,12 +18,6 @@ jobs:
       contents: read # For repo checkout
 
     steps:
-      - name: Tree
-        run: git log --graph --oneline --all
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
       - name: Dump job context
         env:
           JOB_CONTEXT: ${{ toJson(job) }}
@@ -47,6 +41,13 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Tree
+        run: git log --graph --oneline --all
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
 
       - name: Trunk Check
         uses: trunk-io/trunk-action@90b49cbec60b1a24052c7c13174eb546ad4d0c51
