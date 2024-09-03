@@ -18,6 +18,8 @@ jobs:
       contents: read # For repo checkout
 
     steps:
+      - name: Tree
+        run: git log --graph --oneline --all
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
